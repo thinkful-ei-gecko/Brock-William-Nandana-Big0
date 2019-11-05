@@ -25,7 +25,8 @@ countSheep(5);
 function powerCalculator(int, exp) {
   if (exp === 0) {
     return;
-  } else {
+  } 
+  else {
     base = int ** exp;
     console.log(base);
 
@@ -120,7 +121,7 @@ function stringSplitter(string, separator) {
   return result;
 }
 
-console.log(stringSplitter("02/02/2020", "/"));
+console.log(stringSplitter("02/02/2020/02/02/2020/02/02/2020/02/02/2020/02/02/2020", "/"));
 
 // 6 Fibonacci recursive
 function fibonacci(num) {
@@ -152,15 +153,15 @@ function factorial(num) {
 
 //7 Factorial service iterative solution
 function factorial(number) {
-    let product = 1;
-    for(let i = 1; i <= number; i++) {
-      product *= i;
-    }
-    return product;
+  let product = 1;
+  for (let i = 1; i <= number; i++) {
+    product *= i;
   }
-  
-  console.log(factorial(5));
-  
+  return product;
+}
+
+console.log(factorial(5));
+
 // Maze worker
 const wayOut = (maze, column, row, path = []) => {
   let exitY = maze[0].length - 1;
@@ -206,3 +207,49 @@ var myMaze = [
 ];
 
 console.log(wayOut(myMaze, 0, 0));
+
+// 11 Tower of Hanoi
+function TOH(num, src, des, temp) {
+  if (num == 0) {
+    return;
+  }
+
+  if (num >= 1) {
+    TOH(num - 1, src, temp, des);
+
+    console.log("move disk from tower", src, "to tower", des);
+
+    TOH(num - 1, temp, des, src);
+  }
+}
+TOH(2, "A", "C", "B");
+// TOH questions 
+// 1. after 7 moves with 5 discs what will the poles look like? a-2 largest b-1 smallest ring c- middle 2 rings
+// 2. how many moves will it take fo 3,4 and 5 discs? 3-7 4-15 5-31
+// 3. what is the runtime of the algorithm? Polynomial time O(n^2) - quadratic.
+
+
+
+// 13. Give the BigO of all the drills from yesterday
+/*  1. O(n)
+    2. O(n)
+    3. O(n)
+    4. O(n)
+    5. O(n)
+    6. O(n)
+    7. O(n)
+    8. not linear for sure, maybe O(n^2)
+    9. not linear for sure, maybe O(n^2)
+    10. O(2^n)
+    11. O(n)
+    12. O(log(n))
+
+// 14. Give the bigO of the iterative version 1-7
+    1. O(n)
+    2. O(1)
+    3. O(n)
+    4. O(n)
+    5. O(n)
+    6. O(n)
+    7. 0(n)
+
